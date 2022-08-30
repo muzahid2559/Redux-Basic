@@ -30,6 +30,14 @@ const rootReducer = (state = initState, action) =>{
 const store = redux.createStore(rootReducer);
 console.log(store.getState());
 
+
+// Subscribe
+store.subscribe (() =>{
+    console.log("[Subscribe]",store.getState());
+});
+
+
+
 // Dispatching Action
 store.dispatch({
     type : 'INC_NUM',
